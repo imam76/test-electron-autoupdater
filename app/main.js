@@ -34,7 +34,7 @@ autoUpdater.on("update-available", (info) => {
 
   const dialogOpts = {
     type: 'info',
-    buttons: ['download now', 'Later'],
+    buttons: ['Download now', 'Later'],
     title: 'Application Update Available',
     message: `A new version is available. Do you want to update now?`
   };
