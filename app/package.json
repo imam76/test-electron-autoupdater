@@ -9,13 +9,13 @@
     "start": "electron .",
     "dist": "electron-builder"
   },
-  "repository": "https://github.com/cyrilgupta/electron-autoupdater",
+  "repository": "https://github.com/imam76/test-electron-autoupdater",
   "publish": {
     "provider": "github",
     "releaseType": "release"
   },
   "build": {
-    "appId": "com.coderjeet.autoupdater",
+    "appId": "com.imam76.autoupdater",
     "productName": "Autoupdater app",
     "win": {
       "target": "nsis"
@@ -24,7 +24,7 @@
       "output": "dist"
     }
   },
-  "author": "CoderJeet",
+  "author": "imam76",
   "license": "ISC",
   "devDependencies": {
     "electron": "^19.0.9",

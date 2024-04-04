@@ -27,8 +27,23 @@ app.whenReady().then(() => {
 /*New Update Available*/
 autoUpdater.on("update-available", (info) => {
   curWindow.showMessage(`Update available. Current version ${app.getVersion()}`);
-  let pth = autoUpdater.downloadUpdate();
-  curWindow.showMessage(pth);
+  // let pth = autoUpdater.downloadUpdate();
+  // curWindow.showMessage(pth);
+
+  const dialog = require('electron').dialog;
+
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['download now', 'Later'],
+    title: 'Application Update Available',
+    message: `A new version is available. Do you want to update now?`
+  };
+
+  dialog.showMessageBox(null, dialogOpts).then((result) => {
+    if (result.response === 0) {
+      autoUpdater.downloadUpdate();
+    }
+  });
 });
 
 autoUpdater.on("update-not-available", (info) => {
